@@ -23,7 +23,7 @@ function gather() {
 }
 
 const mainGameLoop = window.setInterval(() => {
-    if (gameData.honeysucklesAmount / 100 !== gameData.honeybees && gameData.honeysucklesAmount < gameData.honeybees) {
+    if (gameData.honeysucklesAmount / 100 !== gameData.honeybees && gameData.honeysucklesAmount > gameData.honeybee) {
         gameData.honeybees += (gameData.honeysucklesAmount / 100) / 10;
         document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} honeybees`;
     }
