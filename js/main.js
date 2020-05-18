@@ -28,7 +28,7 @@ function gather() {
 const mainGameLoop = window.setInterval(() => {
     if (gameData.honeysucklesAmount > gameData.honeybees) {
         gameData.honeybees += 1;
-        gameData.honeybees = Math.min(gameData.honeybees, gameData.honeysucklesAmount / 100);
+        gameData.honeybees = Math.min(gameData.honeybees, Math.floor(gameData.honeysucklesAmount) / 100);
         document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} 
         ${pluralize("honeybee", gameData.honeybees, "honeybees")}`;
     }
