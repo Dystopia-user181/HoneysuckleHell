@@ -25,6 +25,15 @@ function gather() {
     ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
 }
 
+function generateHoneysucklesAndHoney() {
+  const bees = gameData.honeybees;
+  const totalProduction = bees * 3
+  function addHoneyAndHoneysuckles() {
+    gameData.honeysucklesAmount += totalProduction;
+  }
+  setInterval(addHoneyAndHoneysuckles, 2000);
+}
+
 const mainGameLoop = window.setInterval(() => {
     if (gameData.honeysucklesAmount > gameData.honeybees) {
         gameData.honeybees += 1;
