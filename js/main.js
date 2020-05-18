@@ -23,11 +23,12 @@ function gather() {
 }
 
 const mainGameLoop = window.setInterval(() => {
-    if (gameData.honeysucklesAmount / 100 !== gameData.honeybees && gameData.honeysucklesAmount > gameData.honeybee) {
-        gameData.honeybees += (gameData.honeysucklesAmount / 100) / 10;
+    if (gameData.honeysucklesAmount > gameData.honeybees) {
+        gameData.honeybees += 1;
+        gameData.honeybees = Math.min(gameData.honeybees, gameData.honeysucklesAmount / 100);
         document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} honeybees`;
     }
-  }, 100);
+  }, 10000);
 
   function pluralize(value, amount, plural) {
     if (value === undefined || amount === undefined)
