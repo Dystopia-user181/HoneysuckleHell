@@ -27,7 +27,7 @@ function gather() {
 
 function generateHoneysucklesAndHoney() {
   const bees = gameData.honeybees;
-  const totalProduction = bees * 3
+  const totalProduction = bees * 3;
   function addHoneyAndHoneysuckles() {
     gameData.honeysucklesAmount += totalProduction;
   }
