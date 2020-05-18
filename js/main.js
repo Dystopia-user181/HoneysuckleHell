@@ -17,16 +17,20 @@ function gather() {
     }
     gameData.honeysuckles += 1;
     gameData.honeysucklesAmount -= 1;
-    document.getElementById("honeysuckles").textContent = `You have ${gameData.honeysuckles} honeysuckles.`;
+
+    document.getElementById("honeysuckles").textContent = `You have ${gameData.honeysuckles} 
+    ${pluralize("honeysuckle", gameData.honeysuckles, "honeysuckles")}.`;
+
     document.getElementById("honeysucklesAmount").textContent = `There are ${gameData.honeysucklesAmount} 
-    honeysuckles in this field.`;
+    ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
 }
 
 const mainGameLoop = window.setInterval(() => {
     if (gameData.honeysucklesAmount > gameData.honeybees) {
         gameData.honeybees += 1;
         gameData.honeybees = Math.min(gameData.honeybees, gameData.honeysucklesAmount / 100);
-        document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} honeybees`;
+        document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} 
+        ${pluralize("honeybee", gameData.honeybees, "honeybees")}`;
     }
   }, 10000);
 
