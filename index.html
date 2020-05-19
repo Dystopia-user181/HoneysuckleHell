@@ -7,16 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="honeysuckles">You have 0 Honeysuckles.</div>
-    <div id="honeysucklesAmount">There are 200 honeysuckles in this field.</div>
-    <br>
-    <button onclick="gather()">Collect 1 honeysuckle from the field</button>
-    <button onclick="replant()">Replant 1 honeysuckle into the field</button>
-    <br>
-    <div id="honeybees">You have 0 honeybees</div>
-    <br>
-    <div>You have 0 honey</div>
+    <div id="ui" class="c-ui"></div>
 </body>
+
+<!--libraries-->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/break_infinity.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@antimatter-dimensions/notations"></script>
 
 <!--game data-->
 
@@ -24,9 +22,13 @@
 <script src="js/intervals.js"></script>
 <script src="js/gamedata.js"></script>
 
-<!--libraries-->
+<!--ui-->
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/break_infinity.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@antimatter-dimensions/notations"></script>
+<script src="js/ui/uifunctions.js"></script>
+<script src="js/ui/mainpage.js"></script>
+
+<script src="js/ui/resources/primary-button.js"></script>
+<script src="js/ui/resources/id.js"></script>
+
+<script src="js/ui/resources/mixins/emit.js"></script>
 </html>
