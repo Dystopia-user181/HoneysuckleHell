@@ -25,6 +25,21 @@ function gather() {
     ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
 }
 
+function replant() {
+  if (gameData.honeysuckles === 0) {
+    alert("You don't have any honeysuckles to replant");
+    return;
+  }
+  gameData.honeysuckles -= 1;
+  gameData.honeysucklesAmount += 1;
+
+  document.getElementById("honeysuckles").textContent = `You have ${gameData.honeysuckles} 
+  ${pluralize("honeysuckle", gameData.honeysuckles, "honeysuckles")}.`;
+
+  document.getElementById("honeysucklesAmount").textContent = `There are ${gameData.honeysucklesAmount} 
+  ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
+}
+
 const mainGameLoop = window.setInterval(() => {
     if (gameData.honeysucklesAmount > gameData.honeybees) {
         gameData.honeybees += 1;
