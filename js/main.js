@@ -40,6 +40,13 @@ function replant() {
   ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
 }
 
+const regrowHoneysuckles = window.setInterval(() => {
+  gameData.honeysucklesAmount += 1;
+
+  document.getElementById("honeysucklesAmount").textContent = `There are ${gameData.honeysucklesAmount} 
+  ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
+}, 5000);
+
 const mainGameLoop = window.setInterval(() => {
     if (gameData.honeysucklesAmount > gameData.honeybees) {
         gameData.honeybees += 1;
