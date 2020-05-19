@@ -1,15 +1,5 @@
 "use strict";
 
-const gameData = {
-
-    honeysuckles: 0,
-    honeysucklesAmount: 200,
-    honeybees: 0,
-    honey: 0,
-    money: 0
-};
-
-
 function gather() {
     if (gameData.honeysucklesAmount === 0) {
         alert("You are out of honeysuckles to gather!");
@@ -23,15 +13,6 @@ function gather() {
 
     document.getElementById("honeysucklesAmount").textContent = `There are ${gameData.honeysucklesAmount} 
     ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
-}
-
-function generateHoneysucklesAndHoney() {
-  const bees = gameData.honeybees;
-  const totalProduction = bees * 3;
-  function addHoneyAndHoneysuckles() {
-    gameData.honeysucklesAmount += totalProduction;
-  }
-  setInterval(addHoneyAndHoneysuckles(), 2000);
 }
 
 function replant() {
@@ -49,22 +30,6 @@ function replant() {
   ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
 }
 
-const regrowHoneysuckles = window.setInterval(() => {
-  gameData.honeysucklesAmount += 1;
-
-  document.getElementById("honeysucklesAmount").textContent = `There are ${gameData.honeysucklesAmount} 
-  ${pluralize("honeysuckle", gameData.honeysucklesAmount, "honeysuckles")} in this field.`;
-}, 5000);
-
-const mainGameLoop = window.setInterval(() => {
-    if (gameData.honeysucklesAmount > gameData.honeybees) {
-        gameData.honeybees += 1;
-        gameData.honeybees = Math.min(gameData.honeybees, Math.floor(gameData.honeysucklesAmount) / 100);
-        document.getElementById("honeybees").textContent = `You have ${Math.floor(gameData.honeybees)} 
-        ${pluralize("honeybee", gameData.honeybees, "honeybees")}`;
-    }
-  }, 10000);
-
   function pluralize(value, amount, plural) {
     if (value === undefined || amount === undefined)
       throw "Arguments must be defined";
@@ -79,3 +44,4 @@ const mainGameLoop = window.setInterval(() => {
     if (isSingular) return value;
     return plural === undefined ? `${value}s` : plural;
   }
+  
