@@ -31,7 +31,7 @@ function generateHoneysucklesAndHoney() {
   function addHoneyAndHoneysuckles() {
     gameData.honeysucklesAmount += totalProduction;
   }
-  setInterval(addHoneyAndHoneysuckles, 2000);
+  setInterval(addHoneyAndHoneysuckles(), 2000);
 }
 
 const mainGameLoop = window.setInterval(() => {
